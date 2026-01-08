@@ -3,7 +3,9 @@ pipeline{
 	stages{
 		stage('Clone'){
 			steps{
-				echo 'clone'
+				echo 'start clone'
+				git branch: 'feature_1', url: 'https://github.com/ngockien4102/t3h__devOps.git'
+				echo 'done clone'
 			}
 		}
 
