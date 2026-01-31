@@ -36,13 +36,13 @@ pipeline{
 	stages{
 		stage('clone'){
 			steps{
-				git branch: 'feature_1', credentialsId: 'docker-jenkin', url: 'https://github.com/ngockien4102/t3h__devOps'
+				git branch: 'feature_1', credentialsId: 'jenkin_token', url: 'https://github.com/ngockien4102/t3h__devOps'
 			}
 		}
 
 		stage('Docker') {
 			steps{
-				withDockerRegistry(credentialsId:'docker-jenkin', url:''){
+				withDockerRegistry(credentialsId:'jenkin_token', url:''){
 					sh label: '', script: 'docker build -t ngockien0410/testJenkin .'
 					sh label: '', script: 'docker push ngockien0410/testJenkin'
 				}
