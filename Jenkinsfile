@@ -43,8 +43,8 @@ pipeline{
 		stage('Docker') {
 			steps{
 				withDockerRegistry(credentialsId:'jenkin_token', url:''){
-					sh label: '', script: 'docker build -t ngockien0410/testJenkin .'
-					sh label: '', script: 'docker push ngockien0410/testJenkin'
+					sh label: '', script: 'docker build -t ngockien0410/test_Jenkin .'
+					sh label: '', script: 'docker push ngockien0410/test_Jenkin'
 				}
 			}
 		}
