@@ -42,10 +42,12 @@ pipeline{
 
 		stage('Docker') {
 			steps{
-				withDockerRegistry(credentialsId:'jenkin_token', url:''){
-					sh label: '', script: 'docker build -t ngockien0410/test_jenkin .'
-					sh label: '', script: 'docker push ngockien0410/test_jenkin'
-				}
+				dir('templatemoo_graph_page') {
+                            withDockerRegistry(credentialsId: 'jenkin_token', url: '') {
+                                sh 'docker build -t ngockien0410/test_jenkin .'
+                                sh 'docker push ngockien0410/test_jenkin'
+                            }
+                        }
 			}
 		}
 	}
