@@ -36,7 +36,7 @@ pipeline{
 	stages{
 		stage('clone'){
 			steps{
-				git branch: 'feature_1', credentialsId: 'jenkin_token', url: 'https://github.com/ngockien4102/t3h__devOps'
+				git branch: 'feature_1', credentialsId: 'github-jenkins', url: 'https://github.com/ngockien4102/t3h__devOps'
 			}
 		}
 
