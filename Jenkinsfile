@@ -42,7 +42,7 @@ pipeline{
 
 		stage('Docker') {
 			steps{
-				dir('templatemoo_graph_page') {
+				dir('templatemo_602_graph_page') {
                             withDockerRegistry(credentialsId: 'jenkin_token', url: '') {
                                 sh 'docker build -t ngockien0410/test_jenkin .'
                                 sh 'docker push ngockien0410/test_jenkin'
